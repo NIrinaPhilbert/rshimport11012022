@@ -263,7 +263,7 @@ def terminerdataset(ds, pe, ou):
 # ListNomColonneInutileTab3 = "cAnnee cCodeNiv cCodeStru cPeriode cTypeRapport cType cCode c$_Tot_M c$_Tot_F c$_Tot_NC"
 ListNomColonneInutileRSH= "RSH_1 AUTRES_1 AUTRES_2 NUM_SENDER"
 # filedbname = 'Tab3TestErreur1.csv'
-filedbname = 'TAB16_FANOME_VF_CSV.csv'
+filedbname = 'datatestrsh.csv'
 #Tablename = 'tRM_CSB_FANOME'
 # print(os.environ.get('w_param'))
 importer_gesis_vers_dhis2(filedbname, ListNomColonneInutileRSH)
