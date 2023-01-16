@@ -182,7 +182,7 @@ def submit(de, co, ds, ou, pe, value):
             url = "https://simr.snis-sante.net/api/dataValues"
             # url = "http://localhost:8080/api/dataValues"
             url_for_custom_form = "http://localhost:8080/api/dataValues?de=" + de + "&co=" + co + "&ds=" + ds + "&ou=" + ou + "&pe=" + pe + "&value=" + value
-            post = requests.post(url_for_custom_form, auth=(os.environ["userdhis2"], os.environ["pwddhis2"]),
+            post = requests.post(url_for_custom_form, auth=(os.environ["api_fetcher_auth"], os.environ["api_fetcher_password"]),
                                  data=payload)
 
             if post.status_code not in [200, 201]:
@@ -210,7 +210,7 @@ def submit(de, co, ds, ou, pe, value):
                         }
                     ]
             }
-            post = requests.post(url, json=my_json_data, auth=(os.environ["userdhis2"], os.environ["pwddhis2"]))
+            post = requests.post(url, json=my_json_data, auth=(os.environ["api_fetcher_auth"], os.environ["api_fetcher_password"]))
 
             try:
                 print("post result :" + post.json())
@@ -246,7 +246,7 @@ def terminerdataset(ds, pe, ou):
                 }
             ]
     }
-    post = requests.post(url, json=my_json_data, auth=(os.environ["userdhis2"], os.environ["pwddhis2"]))
+    post = requests.post(url, json=my_json_data, auth=(os.environ["api_fetcher_auth"], os.environ["api_fetcher_password"]))
 
     try:
         print("post result :" + post.json())
